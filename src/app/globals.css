@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  --line-height-base: 1.6;
+  --line-height-adjust: 1.3;
+  --font-size-h1: 56px;
+  --font-size-h2: 48px;
+  --font-size-h3: 36px;
+  --font-size-h4: 32px;
+  --font-size-h5: 24px;
+  --font-size-h6: 20px;
+  --font-size-h7: 17px;
+  --font-size-p: 15px;
+  --font-size-sm: 13px;
+  --font-size-small: 13px;
+  --font-size-xsmall: 11px;
+  --font-weight-bold: bold;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+
+@layer components {
+  .default-layer {
+    @apply fixed inset-0 z-10;
+  }
+
+  .overlay-0 {
+    @apply default-layer bg-transparent;
+  }
+
+  .overlay-1 {
+    @apply default-layer bg-black bg-opacity-30;
+  }
+
+  .overlay-2 {
+    @apply default-layer bg-black bg-opacity-50;
+  }
+
+  .overlay-3 {
+    @apply default-layer bg-black bg-opacity-70;
+  }
+}
+
+
+@layer components {
+  .default-modal {
+    @apply absolute z-[100];
+  }
+
+  .center-modal {
+    @apply default-modal top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 bg-[var(--background)] rounded-lg;
+  }
+}
